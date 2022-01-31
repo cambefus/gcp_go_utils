@@ -23,6 +23,14 @@ type CStore struct {
 	credentials []byte
 }
 
+func (cs *CStore) Client() *storage.Client {
+	return cs.client
+}
+
+func (cs *CStore) Bucket() *storage.BucketHandle {
+	return cs.bucket
+}
+
 var defaultClient *storage.Client
 
 // NewCStore - creates an object suitable for accessing a predefined Bucket in GCP Cloud Storage
